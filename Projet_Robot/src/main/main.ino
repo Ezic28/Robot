@@ -26,7 +26,6 @@ const int ENCOCHES_TOTAL = 3200;
 const float DISTANCE_PAR_ENCOCHE = (DIAMETRE_ROUE * M_PI) / ENCOCHES_TOTAL;
 const float KP = 0.01 ;
 bool isForward = false;
-// FUCK !!!!!!!!!!!!
 
 
 /* ****************************************************************************
