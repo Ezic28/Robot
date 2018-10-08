@@ -31,44 +31,6 @@ bool isForward = false;
 /* ****************************************************************************
 Vos propres fonctions sont creees ici
 **************************************************************************** */
-void TestEncodeurRoue()
-{
-  int pulse0;
-  int pulse1;
-
-  ENCODER_Reset(0);
-  ENCODER_Reset(1);
-
-  MOTOR_SetSpeed(0, 0.5);
-  MOTOR_SetSpeed(1, 0.5);
-  delay(2000);
-
-  MOTOR_SetSpeed(0, 0);
-  MOTOR_SetSpeed(1, 0);
-
-  pulse0 = ENCODER_ReadReset(0);
-  delay(200);
-  pulse1 = ENCODER_ReadReset(1);
-
-  printf("Encodeur gauche %d\n", pulse0);
-  printf("Encodeur droit %d\n", pulse1);
-}
-
-void TestTourner(bool turn)
-{
-  if (turn == 0)
-  {
-    MOTOR_SetSpeed(0, 0.2);
-    MOTOR_SetSpeed(1, 0.5);
-  }
-  else if(turn == 1)
-  {
-    MOTOR_SetSpeed(0, 0.5);
-    MOTOR_SetSpeed(1, 0.2);
-  }
-
-}
-
 
 /**
  * - Methode qui sert a calculer la distance en coche, call le PID et a reset les moteur a 0
@@ -153,15 +115,16 @@ void PidLigneDroite(float desiredSpeed, int distanceEnCoche)
  * - teta est langle a laquelle on veut tourner, et aGauche est true
  *   si on veut tourner a gauche, sinon est false
  * */
-void Turn (float teta, bool aGauche)
+void Turn (float teta, bool tournerAGauche)
 {
   //je trouve la distance de l'arc en encoches 
-  float distToDo = (M_PI * 39.15 * teta/360)/DISTANCE_PAR_ENCOCHE;
-  float speedTourner = 0.1;
+  float encochesToDo = (M_PI * 39.15 * teta/180) / DISTANCE_PAR_ENCOCHE;
+  float speedTourner = 0.3;
+  int encochesEncodeur;
   int moteur;
 
   //Permet d'asigner le bon moteur pour tourner dans le bon sens selon le bool aGauche
-  if(aGauche){
+  if(tournerAGauche){
     moteur = 1;
   }
   else
@@ -169,14 +132,16 @@ void Turn (float teta, bool aGauche)
     moteur = 0;
   }
 
-  //a chaque 25mili, je trouve le nombre d'encoches parcourue pi je le diminue a la distance a parcourir
-  while(distToDo > 10)
+  // Reset encodeur pour la prochaine utilisation de la fonction
+  ENCODER_Reset(moteur);
+
+  // À chaque 25 mili, vérification du nombre d'encoches tourner jusqu'à atteindre la valeur nécessaire pour tourner
+  while(encochesEncodeur < encochesToDo)
   {
-    ENCODER_Reset(moteur);
+    encochesEncodeur = ENCODER_Read(moteur);
+    Serial.println(encochesEncodeur);
     MOTOR_SetSpeed(moteur, speedTourner);
     delay(25);
-    float distTemp = ENCODER_Read(moteur);
-    distToDo = distToDo - distTemp;
   }
   //jarrete le moteur pour pas qui spin2win
   MOTOR_SetSpeed(moteur, 0);
@@ -202,12 +167,9 @@ Fonctions de boucle infini (loop())
 void loop() {
   // SOFT_TIMER_Update(); // A decommenter pour utiliser des compteurs logiciels
   //delay(10);// Delais pour décharger le CPU
-  //TestEncodeurRoue();
-  //TestTourner(0);
   delay(5000);
-  //Forward(223, 0.5);
-  Turn(90, true);
-  /*
+  Forward(223, 0.5);
+  /*Turn(90, true);
   Forward(50, 0.5);
   Turn(90, false);
   Forward(50, 0.5);
@@ -218,6 +180,5 @@ void loop() {
   Turn(90, true);
   Forward(70, 0.5);
   Turn(90, false);
-  Forward(100, 0.5);
-*/
+  Forward(100, 0.5);*/
 }
