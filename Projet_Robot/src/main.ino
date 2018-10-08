@@ -205,8 +205,9 @@ void loop() {
   //TestEncodeurRoue();
   //TestTourner(0);
   delay(5000);
-  Forward(223, 0.5);
+  //Forward(223, 0.5);
   Turn(90, true);
+  /*
   Forward(50, 0.5);
   Turn(90, false);
   Forward(50, 0.5);
@@ -218,5 +219,5 @@ void loop() {
   Forward(70, 0.5);
   Turn(90, false);
   Forward(100, 0.5);
-
+*/
 }
