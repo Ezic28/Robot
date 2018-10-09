@@ -19,16 +19,15 @@ Variables globales et defines
 ******************************************************************************/
 // -> defines...
 // L'ensemble des fonctions y ont accès
-const float INCREMENTATION_ACCEL = 0.03; // Constante d'incrémentation pour l'accélération
+const float INCREMENTATION_ACCEL = 0.09; // Constante d'incrémentation pour l'accélération
 const float DIAMETRE_ROUE = 7.7; // Constante pour le diamètre de la roue
 const float DIAMETRE_ROBOT = 39.15; // Constante diamètre du robot
 const int ENCOCHES_TOTAL = 3200; // Constante encoches total des encodeurs
 const float DISTANCE_PAR_ENCOCHE = (DIAMETRE_ROUE * M_PI) / ENCOCHES_TOTAL; // Constante distance par encoche
-const float KP = 0.002; // Constante pour le quotient proportionnel
-const int DISTANCE_DECELERATION = 26; // Constante pour la valeur de décélération
+const float KP = 0.003; // Constante pour le quotient proportionnel
+const int DISTANCE_DECELERATION = 35; // Constante pour la valeur de décélération
 bool isForward = false; // bool qui permet de vérifier si le robot avance
-float speedTourner = 0.3; // Vitesse pour faire tourner le robot
-//uih
+float speedTourner = 0.35; // Vitesse pour faire tourner le robot
 
 
 /******************************************************************************
@@ -71,7 +70,7 @@ void PidLigneDroite(float desiredSpeed, int distanceEnCoche)
   }
 
   // L'incrémentation de la constante INCREMENTATION_ACCEL est rapide donc mettre le nombre 10 est plus précis que de mettre 0
-  while(distanceEnCoche > 10)
+  while(distanceEnCoche > 5)
   {
     // Accélération jusqu'à la vitesse voulu
     if (currentSpeed < desiredSpeed && !noAccel)
@@ -176,31 +175,31 @@ void UTurn()
 void Parcours()
 {
   delay(2000);
-  Forward(215, 0.5);
+  Forward(215, 0.8);
   delay(100);
   Turn(85, true);
   delay(250);
-  Forward(30, 0.5);
+  Forward(30, 0.8);
   delay(100);
   Turn(85, false);
   delay(100);
-  Forward(25, 0.5);
+  Forward(25, 0.8);
   delay(100);
   Turn(85, false);
   delay(100);
-  Forward(20, 0.5);
+  Forward(20, 0.8);
   delay(100);
   Turn(50, true);
   delay(100);
-  Forward(58, 0.5);
+  Forward(58, 0.8);
   delay(100);
   Turn(80, true);
   delay(100);
-  Forward(70, 0.5);
+  Forward(70, 0.8);
   delay(100);
   Turn(50, false);
   delay(100);
-  Forward(120, 0.5);
+  Forward(120, 0.8);
 }
 
 /* 
@@ -208,31 +207,31 @@ void Parcours()
  */
 void ParcoursInverse()
 {
-  Forward(120, 0.5);
+  Forward(120, 0.8);
   delay(100);
   Turn(50, true);
   delay(250);
-  Forward(70, 0.5);
+  Forward(70, 0.8);
   delay(100);
   Turn(80, false);
   delay(100);
-  Forward(58, 0.5);
+  Forward(58, 0.8);
   delay(100); 
   Turn(50, false);
   delay(100);
-  Forward(20, 0.5);
+  Forward(20, 0.8);
   delay(100);
   Turn(85, true);
   delay(100);
-  Forward(25, 0.5);
+  Forward(25, 0.8);
   delay(100);
   Turn(85, true);
   delay(100);
-  Forward(30, 0.5);
+  Forward(30, 0.8);
   delay(100);
   Turn(85, false);
   delay(100);
-  Forward(215, 0.5);
+  Forward(215, 0.8);
 }
 
 /* ****************************************************************************
