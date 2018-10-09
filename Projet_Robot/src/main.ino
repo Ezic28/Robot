@@ -174,7 +174,7 @@ void UTurn()
  */
 void Parcours()
 {
-  delay(2000);
+  delay(500);
   Forward(215, 0.8);
   delay(100);
   Turn(85, true);
@@ -207,6 +207,7 @@ void Parcours()
  */
 void ParcoursInverse()
 {
+  delay(100);
   Forward(120, 0.8);
   delay(100);
   Turn(50, true);
@@ -254,8 +255,9 @@ Fonctions de boucle infini (loop())
 void loop() {
   // SOFT_TIMER_Update(); // A decommenter pour utiliser des compteurs logiciels
   //delay(10);// Delais pour décharger le CPU
-
-  Parcours(); // Fait le trajet de base du parcours
-  UTurn(); // Effectue un virage à 180 degrée
-  ParcoursInverse(); // Fait le trajet inverse du parcours
+  if(ROBUS_IsBumper(3)){
+    Parcours(); // Fait le trajet de base du parcours
+    UTurn(); // Effectue un virage à 180 degrée
+    ParcoursInverse(); // Fait le trajet inverse du parcours
+  }
 } 
