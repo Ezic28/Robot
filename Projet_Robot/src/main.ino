@@ -28,6 +28,7 @@ const float KP = 0.002; // Constante pour le quotient proportionnel
 const int DISTANCE_DECELERATION = 26; // Constante pour la valeur de décélération
 bool isForward = false; // bool qui permet de vérifier si le robot avance
 float speedTourner = 0.3; // Vitesse pour faire tourner le robot
+//uih
 
 
 /******************************************************************************
