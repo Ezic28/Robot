@@ -6,9 +6,9 @@ Description: Breve description du script
 Date: Derniere date de modification
 */
 
-/* ****************************************************************************
+/******************************************************************************
 Inclure les librairies de functions que vous voulez utiliser
-**************************************************************************** */
+******************************************************************************/
 
 #include <LibRobus.h> // Essentielle pour utiliser RobUS
 #include <math.h>
