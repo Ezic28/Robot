@@ -18,18 +18,18 @@ Inclure les librairies de functions que vous voulez utiliser
 Variables globales et defines
 **************************************************************************** */
 // -> defines...
-// L'ensemble des fonctions y ont acces
-const float INCREMENTATION_ACCEL = 0.03;
-const float DIAMETRE_ROUE = 7.7;
-const float DIAMETRE_ROBOT = 39.15;
-const int ENCOCHES_TOTAL = 3200;
-const float DISTANCE_PAR_ENCOCHE = (DIAMETRE_ROUE * M_PI) / ENCOCHES_TOTAL;
-const float KP = 0.002;
-bool isForward = false;
+// L'ensemble des fonctions y ont accès
+const float INCREMENTATION_ACCEL = 0.03; // Constante d'incrémentation pour l'accélération
+const float DIAMETRE_ROUE = 7.7; // Constante pour le diamètre de la roue
+const float DIAMETRE_ROBOT = 39.15; // Constante diamètre du robot
+const int ENCOCHES_TOTAL = 3200; // Constante encoches total des encodeurs
+const float DISTANCE_PAR_ENCOCHE = (DIAMETRE_ROUE * M_PI) / ENCOCHES_TOTAL; // Constante distance par encoche
+const float KP = 0.002; // Constante pour le quotient proportionnel
+bool isForward = false; // bool qui permet de vérifier si le robot avance
 
 
 /* ****************************************************************************
-Vos propres fonctions sont creees ici
+Vos propres fonctions sont créées ici
 **************************************************************************** */
 
 /**
@@ -120,16 +120,15 @@ void PidLigneDroite(float desiredSpeed, int distanceEnCoche)
  * - teta est langle a laquelle on veut tourner, et aGauche est true
  *   si on veut tourner a gauche, sinon est false
  * */
-void Turn (float teta, bool tournerAGauche)
+void Turn (float teta, bool aGauche)
 {
   //je trouve la distance de l'arc en encoches 
-  float encochesToDo = (M_PI * 39.15 * teta/180) / DISTANCE_PAR_ENCOCHE;
+  float encochesToDo = (M_PI * 39.15 * teta/360)/DISTANCE_PAR_ENCOCHE;
   float speedTourner = 0.3;
-  int encochesEncodeur;
   int moteur;
 
   //Permet d'asigner le bon moteur pour tourner dans le bon sens selon le bool aGauche
-  if(tournerAGauche){
+  if(aGauche){
     moteur = 1;
   }
   else
@@ -137,16 +136,15 @@ void Turn (float teta, bool tournerAGauche)
     moteur = 0;
   }
 
-  // Reset encodeur pour la prochaine utilisation de la fonction
-  ENCODER_Reset(moteur);
-
-  // À chaque 25 mili, vérification du nombre d'encoches tourner jusqu'à atteindre la valeur nécessaire pour tourner
-  while(encochesEncodeur < encochesToDo)
+  //a chaque 25mili, je trouve le nombre d'encoches parcourue pi je le diminue a la distance a parcourir
+  while(encochesToDo > 5)
   {
-    encochesEncodeur = ENCODER_Read(moteur);
-    Serial.println(encochesEncodeur);
+    ENCODER_Reset(moteur);
     MOTOR_SetSpeed(moteur, speedTourner);
-    delay(25);
+    delay(100);
+    float encochesTemp = ENCODER_Read(moteur);
+    Serial.println(encochesTemp);
+    encochesToDo = encochesToDo - encochesTemp;
   }
   //jarrete le moteur pour pas qui spin2win
   MOTOR_SetSpeed(moteur, 0);
@@ -172,8 +170,10 @@ Fonctions de boucle infini (loop())
 void loop() {
   // SOFT_TIMER_Update(); // A decommenter pour utiliser des compteurs logiciels
   //delay(10);// Delais pour décharger le CPU
-
-  delay(40000);
+  //TestEncodeurRoue();
+  //TestTourner(0);
+  
+  //delay(40000);
   Forward(215, 0.5);
   delay(100);
   Turn(85, true);
