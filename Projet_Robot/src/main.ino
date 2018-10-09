@@ -24,7 +24,7 @@ const float DIAMETRE_ROUE = 7.7;
 const float DIAMETRE_ROBOT = 39.15;
 const int ENCOCHES_TOTAL = 3200;
 const float DISTANCE_PAR_ENCOCHE = (DIAMETRE_ROUE * M_PI) / ENCOCHES_TOTAL;
-const float KP = 0.01 ;
+const float KP = 0.002;
 bool isForward = false;
 
 
@@ -65,7 +65,7 @@ void PidLigneDroite(float desiredSpeed, int distanceEnCoche)
   // Si petite distance, aucun point a accellerer jusqua une certaine vitesse
   if(distanceEnCoche<smallDist){
     noAccel = true;
-    currentSpeed = 0.3;
+    currentSpeed = 0.25;
   }
 
   //L'incrementation descendant vite, avoir une valeur de 10 permet d'etre plus precis qu'une valeur de 0
@@ -82,7 +82,7 @@ void PidLigneDroite(float desiredSpeed, int distanceEnCoche)
 
     //code qui fait descellerer
     //jai hard code le 26, cest trash mais cest ce qui fittait le mieux pour un speed de 0.5
-    if(distanceEnCoche < 26/DISTANCE_PAR_ENCOCHE)
+    if(distanceEnCoche < 26/DISTANCE_PAR_ENCOCHE && !noAccel)
     {
       desiredSpeed = 0;
       if (currentSpeed > desiredSpeed)
@@ -92,19 +92,24 @@ void PidLigneDroite(float desiredSpeed, int distanceEnCoche)
         currentSpeed = desiredSpeed;
       }
     }
-    MOTOR_SetSpeed(0, currentSpeed);
-    MOTOR_SetSpeed(1, currentSpeed);
+
+
+    if(noAccel && distanceEnCoche < 10){
+      MOTOR_SetSpeed(0, 0);
+      MOTOR_SetSpeed(1, 0);
+    }
     //code pour le PID
     ENCODER_Reset(0);
     ENCODER_Reset(1);
     //meilleur valeur pour le PID selon hard test, MEN PARLER AVANT DE CHANGER
     delay(100);
     int master = ENCODER_Read(0);
-    distanceEnCoche = distanceEnCoche + master;
+    distanceEnCoche = distanceEnCoche - master;
     int slave = ENCODER_Read(1);
     int error = master - slave;
-    int incrementation = error*KP;
-    MOTOR_SetSpeed(1, currentSpeed + incrementation);
+    float incrementation = error*KP;
+    MOTOR_SetSpeed(0, currentSpeed);
+    MOTOR_SetSpeed(1, (currentSpeed + incrementation));
   }
 
 }
@@ -167,18 +172,31 @@ Fonctions de boucle infini (loop())
 void loop() {
   // SOFT_TIMER_Update(); // A decommenter pour utiliser des compteurs logiciels
   //delay(10);// Delais pour décharger le CPU
-  delay(5000);
-  Forward(223, 0.5);
-  /*Turn(90, true);
-  Forward(50, 0.5);
-  Turn(90, false);
-  Forward(50, 0.5);
-  Turn(90, true);
+
+  delay(40000);
+  Forward(215, 0.5);
+  delay(100);
+  Turn(85, true);
+  delay(250);
+  Forward(30, 0.5);
+  delay(100);
+  Turn(85, false);
+  delay(100);
   Forward(25, 0.5);
-  Turn(45, false);
-  Forward(40, 0.5);
-  Turn(90, true);
+  delay(100);
+  Turn(85, false);
+  delay(100);
+  Forward(20, 0.5);
+  delay(100);
+  Turn(50, true);
+  delay(100);
+  Forward(58, 0.5);
+  delay(100);
+  Turn(80, true);
+  delay(100);
   Forward(70, 0.5);
-  Turn(90, false);
-  Forward(100, 0.5);*/
+  delay(100);
+  Turn(50, false);
+  delay(100);
+  Forward(120, 0.5);
 }
