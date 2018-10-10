@@ -24,8 +24,8 @@ const float DIAMETRE_ROUE = 7.7; // Constante pour le diamètre de la roue
 const float DIAMETRE_ROBOT = 39.15; // Constante diamètre du robot
 const int ENCOCHES_TOTAL = 3200; // Constante encoches total des encodeurs
 const float DISTANCE_PAR_ENCOCHE = (DIAMETRE_ROUE * M_PI) / ENCOCHES_TOTAL; // Constante distance par encoche
-const float KP = 0.003; // Constante pour le quotient proportionnel
 const int DISTANCE_DECELERATION = 35; // Constante pour la valeur de décélération
+float KP = 0.003; // Constante pour le quotient proportionnel
 bool isForward = false; // bool qui permet de vérifier si le robot avance
 float speedTourner = 0.35; // Vitesse pour faire tourner le robot
 
@@ -66,7 +66,8 @@ void PidLigneDroite(float desiredSpeed, int distanceEnCoche)
   // Si la distance est trop petite on élimine l'accélération
   if(distanceEnCoche < smallDist){
     noAccel = true;
-    currentSpeed = 0.25;
+    currentSpeed = 0.35;
+    KP = 0.001;
   }
 
   // L'incrémentation de la constante INCREMENTATION_ACCEL est rapide donc mettre le nombre 10 est plus précis que de mettre 0
@@ -111,6 +112,10 @@ void PidLigneDroite(float desiredSpeed, int distanceEnCoche)
     MOTOR_SetSpeed(0, currentSpeed);
     MOTOR_SetSpeed(1, (currentSpeed + incrementation));
   }
+  if(noAccel)
+  {
+    KP = 0.003;
+  }
 
 }
 
@@ -135,7 +140,7 @@ void Turn (float theta, bool aGauche)
   }
 
   // À chaque 25mili, trouver le nombre d'encoches parcourue et le diminuer à la distance à parcourir
-  while(encochesToDo > 5)
+  while(encochesToDo > 0)
   {
     ENCODER_Reset(moteur);
     MOTOR_SetSpeed(moteur, speedTourner);
@@ -153,7 +158,7 @@ void Turn (float theta, bool aGauche)
  */
 void UTurn()
 {
-  int encochesToDo = 28 / DISTANCE_PAR_ENCOCHE;
+  int encochesToDo = (M_PI * 39.15 * 86 / 360) / DISTANCE_PAR_ENCOCHE;
   while(encochesToDo > 0)
   {
     ENCODER_Reset(0);
@@ -177,27 +182,27 @@ void Parcours()
   delay(500);
   Forward(215, 0.8);
   delay(100);
-  Turn(85, true);
+  Turn(82.5, true);
   delay(250);
   Forward(32, 0.8);
   delay(100);
-  Turn(85, false);
+  Turn(82.8, false);
   delay(100);
   Forward(25, 0.8);
   delay(100);
-  Turn(85, false);
+  Turn(83, false);
   delay(100);
-  Forward(18, 0.8);
+  Forward(22, 0.8);
   delay(100);
   Turn(55, true);
   delay(100);
-  Forward(58, 0.8);
+  Forward(58.5, 0.8);
   delay(100);
-  Turn(75, true);
+  Turn(74.3, true);
   delay(100);
-  Forward(70, 0.8);
+  Forward(62, 0.8);
   delay(100);
-  Turn(50, false);
+  Turn(46, false);
   delay(100);
   Forward(120, 0.8);
 }
@@ -208,29 +213,29 @@ void Parcours()
 void ParcoursInverse()
 {
   delay(100);
-  Forward(120, 0.8);
+  Forward(124, 0.8);
   delay(100);
-  Turn(50, true);
+  Turn(45, true);
   delay(250);
-  Forward(70, 0.8);
+  Forward(62, 0.8);
   delay(100);
-  Turn(80, false);
+  Turn(77, false);
   delay(100);
   Forward(58, 0.8);
   delay(100); 
   Turn(50, false);
   delay(100);
-  Forward(20, 0.8);
+  Forward(30, 0.8);
   delay(100);
-  Turn(85, true);
+  Turn(82, true);
   delay(100);
   Forward(25, 0.8);
   delay(100);
-  Turn(85, true);
+  Turn(82, true);
   delay(100);
-  Forward(30, 0.8);
+  Forward(25, 0.8);
   delay(100);
-  Turn(85, false);
+  Turn(82, false);
   delay(100);
   Forward(215, 0.8);
 }
@@ -256,8 +261,8 @@ void loop() {
   // SOFT_TIMER_Update(); // A decommenter pour utiliser des compteurs logiciels
   //delay(10);// Delais pour décharger le CPU
   if(ROBUS_IsBumper(3)){
-    Parcours(); // Fait le trajet de base du parcours
+   Parcours(); // Fait le trajet de base du parcours
     UTurn(); // Effectue un virage à 180 degrée
-    ParcoursInverse(); // Fait le trajet inverse du parcours
+   ParcoursInverse(); // Fait le trajet inverse du parcours
   }
 } 
