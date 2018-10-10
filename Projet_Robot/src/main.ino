@@ -195,13 +195,13 @@ void Parcours()
   delay(100);
   Turn(83, false); //3
   delay(100);
-  Forward(22, 0.8); //4
+  Forward(23.5, 0.8); //4
   delay(100);
   Turn(55, true); //4
   delay(100);
   Forward(62, 0.8); //5
   delay(100);
-  Turn(74.3, true); //5
+  Turn(68, true); //5
   delay(100);
   Forward(62, 0.8); //6
   delay(100);
@@ -216,13 +216,13 @@ void Parcours()
 void ParcoursInverse()
 {
   delay(100);
-  Forward(124, 0.8);
+  Forward(118, 0.8);
   delay(100);
   Turn(45, true);
   delay(250);
   Forward(62, 0.8);
   delay(100);
-  Turn(77, false);
+  Turn(73, false);
   delay(100);
   Forward(58, 0.8);
   delay(100); 
@@ -238,7 +238,7 @@ void ParcoursInverse()
   delay(100);
   Forward(25, 0.8);
   delay(100);
-  Turn(82, false);
+  Turn(80, false);
   delay(100);
   Forward(215, 0.8);
 }
