@@ -179,7 +179,7 @@ void Parcours()
   delay(100);
   Turn(85, true);
   delay(250);
-  Forward(30, 0.8);
+  Forward(32, 0.8);
   delay(100);
   Turn(85, false);
   delay(100);
@@ -187,13 +187,13 @@ void Parcours()
   delay(100);
   Turn(85, false);
   delay(100);
-  Forward(20, 0.8);
+  Forward(18, 0.8);
   delay(100);
-  Turn(50, true);
+  Turn(55, true);
   delay(100);
   Forward(58, 0.8);
   delay(100);
-  Turn(80, true);
+  Turn(75, true);
   delay(100);
   Forward(70, 0.8);
   delay(100);
