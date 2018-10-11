@@ -29,7 +29,7 @@ float KP = 0.003; // Constante pour le quotient proportionnel
 float KI = 0.000225; // Constante pour le quotient integrateur
 bool isForward = false; // bool qui permet de vérifier si le robot avance
 float speedTourner = 0.35; // Vitesse pour faire tourner le robot
-// Test push
+
 
 /******************************************************************************
 Vos propres fonctions sont créées ici
