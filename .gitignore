@@ -191,3 +191,47 @@ Projet_Robot/build/megaatmega2560/libccb/libSoftwareSerial.a
 Projet_Robot/build/megaatmega2560/libccb/SoftwareSerial/SoftwareSerial.cpp.o
 Projet_Robot/build/megaatmega2560/libdb4/Adafruit INA219_ID160/Adafruit_INA219.cpp.o
 Projet_Robot/build/megaatmega2560/libdb4/libAdafruit INA219_ID160.a
+Projet_Robot/.vscode/settings.json
+Projet_Robot/build/megaatmega2560/lib0ea/libSoftwareSerial.a
+Projet_Robot/build/megaatmega2560/lib0ea/SoftwareSerial/SoftwareSerial.cpp.o
+Projet_Robot/build/megaatmega2560/lib168/libWire.a
+Projet_Robot/build/megaatmega2560/lib168/Wire/utility/twi.c.o
+Projet_Robot/build/megaatmega2560/lib168/Wire/Wire.cpp.o
+Projet_Robot/build/megaatmega2560/lib5fb/libSPI.a
+Projet_Robot/build/megaatmega2560/lib5fb/SPI/SPI.cpp.o
+Projet_Robot/build/megaatmega2560/lib6ed/Adafruit INA219_ID160/Adafruit_INA219.cpp.o
+Projet_Robot/build/megaatmega2560/lib6ed/libAdafruit INA219_ID160.a
+Projet_Robot/build/megaatmega2560/liba7d/libLibRobus.a
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/ArduinoX/ArduinoX.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/AudioPlayer/AudioPlayer.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/DisplayLCD/DisplayLCD.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Aiwa.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Denon.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Dish.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_JVC.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Lego_PF.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_LG.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Mitsubishi.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_NEC.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Panasonic.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_RC5_RC6.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Samsung.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Sanyo.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Sharp.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Sony.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Template.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/ir_Whynter.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/irPronto.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/irRecv.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/IRremote.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/IRremote/irSend.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/LS7366Counter/LS7366Counter.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/MegaServo/MegaServo.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/MotorControl/MotorControl.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/Robus/Robus.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/SerialBluetooth/SerialBluetooth.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/SoftTimer/SoftTimer.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/SRF04Sonar/SRF04Sonar.cpp.o
+Projet_Robot/build/megaatmega2560/liba7d/LibRobus/VexQuadEncoder/VexQuadEncoder.cpp.o
+Projet_Robot/build/megaatmega2560/liba96/libLiquidCrystal_I2C_ID576.a
+Projet_Robot/build/megaatmega2560/liba96/LiquidCrystal_I2C_ID576/LiquidCrystal_I2C.cpp.o
