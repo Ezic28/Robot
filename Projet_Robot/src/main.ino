@@ -24,7 +24,7 @@ const float DIAMETRE_ROUE = 7.7; // Constante pour le diamètre de la roue
 const float DIAMETRE_ROBOT = 39.15; // Constante diamètre du robot
 const int ENCOCHES_TOTAL = 3200; // Constante encoches total des encodeurs
 const float DISTANCE_PAR_ENCOCHE = (DIAMETRE_ROUE * M_PI) / ENCOCHES_TOTAL; // Constante distance par encoche
-const int DISTANCE_DECELERATION = 33; // Constante pour la valeur de décélération
+const int DISTANCE_DECELERATION = 32.5; // Constante pour la valeur de décélération
 float KP = 0.003; // Constante pour le quotient proportionnel
 float KI = 0.000225; // Constante pour le quotient integrateur
 bool isForward = false; // bool qui permet de vérifier si le robot avance
@@ -161,7 +161,7 @@ void Turn (float theta, bool aGauche)
  */
 void UTurn()
 {
-  int encochesToDo = (M_PI * 39.15 * 86 / 360) / DISTANCE_PAR_ENCOCHE;
+  int encochesToDo = (M_PI * 39.15 * 88.5 / 360) / DISTANCE_PAR_ENCOCHE;
   while(encochesToDo > 0)
   {
     ENCODER_Reset(0);
@@ -187,7 +187,7 @@ void Parcours()
   delay(100);
   Turn(82.4, true); //1
   delay(250);
-  Forward(32, 0.8); //2
+  Forward(35, 0.8); //2
   delay(100);
   Turn(82.8, false); //2
   delay(100);
@@ -197,16 +197,16 @@ void Parcours()
   delay(100);
   Forward(22, 0.8); //4
   delay(100);
-  Turn(55.5, true); //4
-  delay(100);
+  Turn(56.5, true); //4
+  delay(700);
   Forward(67, 0.8); //5
-  delay(100);
-  Turn(72.2, true); //5
-  delay(100);
-  Forward(61, 0.8); //6
-  delay(100);
+  delay(700);
+  Turn(70, true); //5
+  delay(300);
+  Forward(54.5, 0.8); //6
+  delay(300);
   Turn(46.5, false); //6
-  delay(100);
+  delay(300);
   Forward(120, 0.8); //7
 }
 
@@ -215,32 +215,32 @@ void Parcours()
  */
 void ParcoursInverse()
 {
-  delay(100);
-  Forward(124, 0.8);
-  delay(100);
-  Turn(45, true);
+  delay(700);
+  Forward(118, 0.8);
+  delay(200);
+  Turn(48, true);//6
   delay(250);
-  Forward(62, 0.8);
+  Forward(56, 0.8);//6
   delay(100);
-  Turn(75.5, false);
+  Turn(70, false);//5
   delay(100);
-  Forward(56, 0.8);
+  Forward(67, 0.8);//5
   delay(100); 
-  Turn(50, false);
+  Turn(56, false);//4
   delay(100);
-  Forward(30, 0.8);
+  Forward(21, 0.8);//4
   delay(100);
-  Turn(82, true);
+  Turn(83, true);//3
   delay(100);
-  Forward(25, 0.8);
+  Forward(25, 0.8);//3
   delay(100);
-  Turn(82, true);
+  Turn(82.8, true);//2
   delay(100);
-  Forward(25, 0.8);
+  Forward(35, 0.8);//2
   delay(100);
-  Turn(82, false);
+  Turn(82.05, false);//1
   delay(100);
-  Forward(215, 0.8);
+  Forward(215, 0.8);//1
 }
 
 /* ****************************************************************************
