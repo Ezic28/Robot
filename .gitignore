@@ -1,0 +1,104 @@
+
+Projet_Robot/.vscode/c_cpp_properties.json
+Projet_Robot/.vscode/extensions.json
+Projet_Robot/.vscode/launch.json
+Projet_Robot/build/do-not-modify-files-here.url
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/.github/ISSUE_TEMPLATE.md
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/.github/PULL_REQUEST_TEMPLATE.md
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/.library.json
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/.travis.yml
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/Adafruit_INA219.cpp
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/Adafruit_INA219.h
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/examples/getcurrent/getcurrent.ino
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/library.properties
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/license.txt
+Projet_Robot/build/piolibdeps/Adafruit INA219_ID160/README.md
+Projet_Robot/build/piolibdeps/LibRobus/
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/.library.json
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/examples/CustomChars/CustomChars.pde
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/examples/HelloWorld/HelloWorld.pde
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/examples/SerialDisplay/SerialDisplay.pde
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/keywords.txt
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/library.json
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/library.properties
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/LiquidCrystal_I2C.cpp
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/LiquidCrystal_I2C.h
+Projet_Robot/build/piolibdeps/LiquidCrystal_I2C_ID576/README.md
+Projet_Robot/build/structure.hash
+Projet_Robot/.vscode/.BROWSE.C_CPP.DB
+Projet_Robot/.vscode/.BROWSE.C_CPP.DB-shm
+Projet_Robot/.vscode/.BROWSE.C_CPP.DB-wal
+Projet_Robot/build/.sconsign.dblite
+Projet_Robot/build/megaatmega2560/firmware.elf
+Projet_Robot/build/megaatmega2560/firmware.hex
+Projet_Robot/build/megaatmega2560/FrameworkArduino/abi.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/CDC.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/HardwareSerial.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/HardwareSerial0.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/HardwareSerial1.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/HardwareSerial2.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/HardwareSerial3.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/hooks.c.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/IPAddress.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/main.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/new.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/PluggableUSB.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/Print.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/Stream.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/Tone.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/USBCore.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/WInterrupts.c.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/wiring.c.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/wiring_analog.c.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/wiring_digital.c.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/wiring_pulse.c.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/wiring_pulse.S.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/wiring_shift.c.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/WMath.cpp.o
+Projet_Robot/build/megaatmega2560/FrameworkArduino/WString.cpp.o
+Projet_Robot/build/megaatmega2560/lib008/Adafruit INA219_ID160/Adafruit_INA219.cpp.o
+Projet_Robot/build/megaatmega2560/lib008/libAdafruit INA219_ID160.a
+Projet_Robot/build/megaatmega2560/lib0ca/libSPI.a
+Projet_Robot/build/megaatmega2560/lib0ca/SPI/SPI.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/libLibRobus.a
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/ArduinoX/ArduinoX.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/AudioPlayer/AudioPlayer.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/DisplayLCD/DisplayLCD.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Aiwa.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Denon.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Dish.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_JVC.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Lego_PF.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_LG.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Mitsubishi.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_NEC.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Panasonic.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_RC5_RC6.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Samsung.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Sanyo.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Sharp.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Sony.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Template.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/ir_Whynter.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/irPronto.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/irRecv.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/IRremote.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/IRremote/irSend.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/LS7366Counter/LS7366Counter.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/MegaServo/MegaServo.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/MotorControl/MotorControl.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/Robus/Robus.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/SerialBluetooth/SerialBluetooth.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/SoftTimer/SoftTimer.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/SRF04Sonar/SRF04Sonar.cpp.o
+Projet_Robot/build/megaatmega2560/lib8c8/LibRobus/VexQuadEncoder/VexQuadEncoder.cpp.o
+Projet_Robot/build/megaatmega2560/libb57/libLiquidCrystal_I2C_ID576.a
+Projet_Robot/build/megaatmega2560/libb57/LiquidCrystal_I2C_ID576/LiquidCrystal_I2C.cpp.o
+Projet_Robot/build/megaatmega2560/libf8a/libWire.a
+Projet_Robot/build/megaatmega2560/libf8a/Wire/utility/twi.c.o
+Projet_Robot/build/megaatmega2560/libf8a/Wire/Wire.cpp.o
+Projet_Robot/build/megaatmega2560/libf8c/libSoftwareSerial.a
+Projet_Robot/build/megaatmega2560/libf8c/SoftwareSerial/SoftwareSerial.cpp.o
+Projet_Robot/build/megaatmega2560/libFrameworkArduino.a
+Projet_Robot/build/megaatmega2560/libFrameworkArduinoVariant.a
+Projet_Robot/build/megaatmega2560/src/main.ino.cpp.o
