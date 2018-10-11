@@ -25,8 +25,8 @@ const float DIAMETRE_ROBOT = 39.15; // Constante diamètre du robot
 const int ENCOCHES_TOTAL = 3200; // Constante encoches total des encodeurs
 const float DISTANCE_PAR_ENCOCHE = (DIAMETRE_ROUE * M_PI) / ENCOCHES_TOTAL; // Constante distance par encoche
 const int DISTANCE_DECELERATION = 35; // Constante pour la valeur de décélération
-float KP = 0.003; // Constante pour le quotient proportionnel
-float KI = 0.000225; // Constante pour le quotient integrateur
+float KP = 0.0027; // Constante pour le quotient proportionnel
+float KI = 0.0002; // Constante pour le quotient integrateur
 bool isForward = false; // bool qui permet de vérifier si le robot avance
 float speedTourner = 0.35; // Vitesse pour faire tourner le robot
 
